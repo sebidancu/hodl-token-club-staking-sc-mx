@@ -95,9 +95,11 @@ pub trait NftStakingSc {
     #[endpoint(stake)]
     #[payable("*")]
     fn stake(&self) {
+        require!(self.call_value().single_esdt().token_identifier == self.nft_collection().get(), "Invalid token identifier for staking function!");
+        
         self.compute_rewards();
         let caller = self.blockchain().get_caller();
-
+        
         require!(self.staking_enabled().get() == true
           || self.allowed_stakers().contains(&caller) == true, "Staking is not allowed!");
         require!(self.stake_limit().get() > self.staked_count().get(), "Staking pool is full!");
