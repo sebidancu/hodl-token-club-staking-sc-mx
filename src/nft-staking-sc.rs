@@ -114,6 +114,8 @@ pub trait NftStakingSc {
     #[endpoint(unstake)]
     #[payable("*")]
     fn unstake(&self, token_id: TokenIdentifier, nonce: u64) {
+        require!(token_id == self.nft_collection().get(), "Invalid token identifier for unstaking function!");
+        
         self.compute_rewards();
 
         let caller = self.blockchain().get_caller();
