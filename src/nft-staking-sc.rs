@@ -77,10 +77,15 @@ pub trait NftStakingSc {
     #[endpoint(supply)]
     fn supply(&self) {
         let rewards_token = self.rewards_token().get();
-        let (supply_token, supply_amount) = self.call_value().egld_or_single_fungible_esdt();
-        require!(supply_token == rewards_token, "Invalid rewards token supply");
+        let payments = self.call_value().all_esdt_transfers();
 
-        self.rewards_supply().update(|rewards_supplied| *rewards_supplied += &supply_amount);
+        for payment in payments.into_iter() {
+            require!(payment.token_identifier == rewards_token, "Invalid rewards token supply");
+
+            self.nonce_token().set(payment.token_nonce); //set new nonce for lkmex
+            self.rewards_supply().update(|rewards_supplied| *rewards_supplied += &payment.amount);
+        }
+
     }
 
     #[only_owner]
@@ -89,7 +94,7 @@ pub trait NftStakingSc {
         require!(self.rewards_supply().get() > withdraw_amount, "You cannot withdraw more than the existing supply");
 
         self.rewards_supply().update(|rewards_supplied| *rewards_supplied -= &withdraw_amount);
-        self.send().direct(&self.blockchain().get_caller(), &self.rewards_token().get(), 0, &withdraw_amount);
+        self.send().direct_esdt(&self.blockchain().get_caller(), &self.rewards_token().get(), self.esdt_nonce().get(), &withdraw_amount);
     }
 
     #[endpoint(stake)]
@@ -211,7 +216,7 @@ pub trait NftStakingSc {
         let caller = self.blockchain().get_caller();
         self.rewards_supply().update(|rewards_supplied| *rewards_supplied -= &rewards);
         self.rewards(&caller).set(BigUint::zero());
-        self.send().direct(&caller, &self.rewards_token().get(), 0, &rewards);
+        self.send().direct_esdt(&caller, &self.rewards_token().get(), self.esdt_nonce().get(), &rewards);
     }
 
     #[view(getStakedCount)]
@@ -261,4 +266,8 @@ pub trait NftStakingSc {
     #[view(getStakers)]
     #[storage_mapper("stakers")]
     fn stakers(&self) -> SetMapper<ManagedAddress>;
+
+    #[view(getEsdtNonce)]
+    #[storage_mapper("esdt_nonce")]
+    fn esdt_nonce(&self) -> SingleValueMapper<u64>;
 }

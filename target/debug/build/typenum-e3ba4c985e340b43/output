@@ -1,0 +1,3 @@
+cargo:rerun-if-changed=build/main.rs
+cargo:rustc-env=TYPENUM_BUILD_CONSTS=/Users/Sebi/Licenta2022/NFT_WIZARDS/staking-sc/hodl-token-club-staking-sc-mx/target/debug/build/typenum-e3ba4c985e340b43/out/consts.rs
+cargo:rustc-env=TYPENUM_BUILD_OP=/Users/Sebi/Licenta2022/NFT_WIZARDS/staking-sc/hodl-token-club-staking-sc-mx/target/debug/build/typenum-e3ba4c985e340b43/out/op.rs

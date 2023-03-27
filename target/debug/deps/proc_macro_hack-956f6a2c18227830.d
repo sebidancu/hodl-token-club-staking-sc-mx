@@ -1,0 +1,9 @@
+/Users/Sebi/Licenta2022/NFT_WIZARDS/staking-sc/hodl-token-club-staking-sc-mx/target/debug/deps/libproc_macro_hack-956f6a2c18227830.dylib: /Users/sebidancu/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro-hack-0.5.20+deprecated/src/lib.rs /Users/sebidancu/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro-hack-0.5.20+deprecated/src/quote.rs /Users/sebidancu/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro-hack-0.5.20+deprecated/src/error.rs /Users/sebidancu/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro-hack-0.5.20+deprecated/src/iter.rs /Users/sebidancu/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro-hack-0.5.20+deprecated/src/parse.rs
+
+/Users/Sebi/Licenta2022/NFT_WIZARDS/staking-sc/hodl-token-club-staking-sc-mx/target/debug/deps/proc_macro_hack-956f6a2c18227830.d: /Users/sebidancu/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro-hack-0.5.20+deprecated/src/lib.rs /Users/sebidancu/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro-hack-0.5.20+deprecated/src/quote.rs /Users/sebidancu/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro-hack-0.5.20+deprecated/src/error.rs /Users/sebidancu/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro-hack-0.5.20+deprecated/src/iter.rs /Users/sebidancu/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro-hack-0.5.20+deprecated/src/parse.rs
+
+/Users/sebidancu/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro-hack-0.5.20+deprecated/src/lib.rs:
+/Users/sebidancu/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro-hack-0.5.20+deprecated/src/quote.rs:
+/Users/sebidancu/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro-hack-0.5.20+deprecated/src/error.rs:
+/Users/sebidancu/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro-hack-0.5.20+deprecated/src/iter.rs:
+/Users/sebidancu/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro-hack-0.5.20+deprecated/src/parse.rs:
